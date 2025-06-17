@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gray-50 p-8 text-gray-800">
+      <section className="max-w-6xl mx-auto text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          Gérez vos portefeuilles intelligemment
+        </h1>
+        <p className="text-lg md:text-xl max-w-2xl mx-auto">
+          Une plateforme tout-en-un pour les conseillers financiers : allocation, suivi, fiscalité, IA.
+        </p>
+        <Button className="mt-6 px-6 py-3 text-lg">Démarrer maintenant</Button>
+      </section>
+
+      <section className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <Card className="shadow-md rounded-2xl p-6">
+          <CardContent>
+            <CheckCircle className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Construction sur-mesure</h3>
+            <p>
+              Créez des portefeuilles alignés avec les objectifs, le profil de risque et les valeurs de vos clients.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="shadow-md rounded-2xl p-6">
+          <CardContent>
+            <CheckCircle className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Gestion automatisée</h3>
+            <p>
+              Rebalancement, harvesting fiscal, alertes et suivi en temps réel : gagnez du temps et de la précision.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="shadow-md rounded-2xl p-6">
+          <CardContent>
+            <CheckCircle className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Transparence totale</h3>
+            <p>
+              Expliquez chaque décision grâce à une IA dédiée, générant des synthèses claires pour vos clients.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="text-center mt-20">
+        <h2 className="text-3xl font-bold mb-4">Passez à la gestion nouvelle génération</h2>
+        <p className="text-lg mb-6 max-w-2xl mx-auto">
+          Notre solution est conçue pour les professionnels exigeants qui veulent allier technologie et accompagnement humain.
+        </p>
+        <Button className="px-6 py-3 text-lg">Demander une démo</Button>
+      </section>
+    </main>
+  );
+}
