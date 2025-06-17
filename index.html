@@ -1,61 +1,94 @@
 <!DOCTYPE html>
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gray-50 p-8 text-gray-800">
-      <section className="max-w-6xl mx-auto text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Gérez vos portefeuilles intelligemment
+    <div className="flex flex-col items-center w-full overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="w-full py-20 px-6 text-center bg-gray-100">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          L’intelligence artificielle au service de votre gestion patrimoniale
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto">
-          Une plateforme tout-en-un pour les conseillers financiers : allocation, suivi, fiscalité, IA.
+        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+          Construisez des portefeuilles sur-mesure, conformes, optimisés – en quelques clics.
         </p>
-        <Button className="mt-6 px-6 py-3 text-lg">Démarrer maintenant</Button>
+        <div className="flex gap-4 justify-center">
+          <Button>Demander une démo</Button>
+          <Button variant="outline">Nous contacter</Button>
+        </div>
       </section>
 
-      <section className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <Card className="shadow-md rounded-2xl p-6">
-          <CardContent>
-            <CheckCircle className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Construction sur-mesure</h3>
-            <p>
-              Créez des portefeuilles alignés avec les objectifs, le profil de risque et les valeurs de vos clients.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="shadow-md rounded-2xl p-6">
-          <CardContent>
-            <CheckCircle className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Gestion automatisée</h3>
-            <p>
-              Rebalancement, harvesting fiscal, alertes et suivi en temps réel : gagnez du temps et de la précision.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="shadow-md rounded-2xl p-6">
-          <CardContent>
-            <CheckCircle className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Transparence totale</h3>
-            <p>
-              Expliquez chaque décision grâce à une IA dédiée, générant des synthèses claires pour vos clients.
-            </p>
-          </CardContent>
-        </Card>
+      {/* Valeur ajoutée */}
+      <section className="py-20 px-6 max-w-6xl w-full">
+        <h2 className="text-3xl font-bold text-center mb-12">Pourquoi nous ?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            ["Allocation intelligente pilotée par IA", "Algorithmes inspirés de la gestion institutionnelle."],
+            ["Conforme à la réglementation française", "Intégration des profils investisseur, seuils de perte, etc."],
+            ["Gagnez du temps", "Déléguez l’analyse financière, concentrez-vous sur la relation client."],
+            ["Suivi de portefeuille en temps réel", "Performances, allocations, alertes."],
+            ["Sécurité et confidentialité garanties", "Données hébergées en France, chiffrées."],
+          ].map(([title, desc], i) => (
+            <Card key={i} className="rounded-2xl shadow-md p-6">
+              <CardContent>
+                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <p>{desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </section>
 
-      <section className="text-center mt-20">
-        <h2 className="text-3xl font-bold mb-4">Passez à la gestion nouvelle génération</h2>
-        <p className="text-lg mb-6 max-w-2xl mx-auto">
-          Notre solution est conçue pour les professionnels exigeants qui veulent allier technologie et accompagnement humain.
+      {/* Fonctionnalités */}
+      <section className="bg-gray-50 py-20 px-6 max-w-6xl w-full">
+        <h2 className="text-3xl font-bold text-center mb-12">Fonctionnalités</h2>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 list-disc list-inside text-lg">
+          <li>Profils investisseurs dynamiques</li>
+          <li>Recommandations d’allocations automatiques</li>
+          <li>Génération automatique de rapports clients</li>
+          <li>Simulateur de risques intégré</li>
+          <li>Comparaison de portefeuilles</li>
+        </ul>
+      </section>
+
+      {/* Pour qui ? */}
+      <section className="py-20 px-6 max-w-4xl w-full text-center">
+        <h2 className="text-3xl font-bold mb-8">Pour qui ?</h2>
+        <p className="text-lg">
+          Ce produit s’adresse à : <br />
+          ✅ Conseillers en gestion de patrimoine (CGP) <br />
+          ✅ Banques privées & family offices <br />
+          ✅ Fintechs B2B <br />
+          ✅ Plateformes d’assurance-vie
         </p>
-        <Button className="px-6 py-3 text-lg">Demander une démo</Button>
       </section>
-    </main>
+
+      {/* À propos */}
+      <section className="bg-gray-100 py-20 px-6 max-w-4xl w-full text-center">
+        <h2 className="text-3xl font-bold mb-6">Qui sommes-nous ?</h2>
+        <p className="text-lg max-w-2xl mx-auto">
+          Une équipe d’experts en finance, data science et régulation unis autour d’une vision : rendre la gestion de portefeuille intelligente accessible à tous les professionnels du patrimoine.
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section className="py-20 px-6 w-full max-w-xl text-center">
+        <h2 className="text-3xl font-bold mb-6">Contactez-nous</h2>
+        <p className="mb-6 text-lg">Laissez-nous vos coordonnées pour organiser une démo personnalisée.</p>
+        <form className="flex flex-col gap-4">
+          <Input type="text" placeholder="Nom et prénom" />
+          <Input type="email" placeholder="Adresse email" />
+          <Button type="submit">Envoyer</Button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full bg-black text-white py-6 text-center text-sm">
+        © {new Date().getFullYear()} VotreNom. Mentions légales – Politique de confidentialité – Cookies
+      </footer>
+    </div>
   );
 }
